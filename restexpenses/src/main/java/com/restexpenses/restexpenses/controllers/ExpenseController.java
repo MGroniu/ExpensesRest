@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+//@CrossOrigin(origins = "https://restexpenses.herokuapp.com")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ExpenseController {
 
