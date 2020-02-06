@@ -3,25 +3,25 @@
       <form (ngSubmit)="onSubmit()" #expenseForm="ngForm">
         <div class="form-group">
           <label for="amount">Amount</label>
-          <input type="text" [(ngModel)]="expense.amount" 
+          <input type="text" [(ngModel)]="expense.amount"
             class="form-control"
             id="amount"
             name="amount"
             placeholder="Enter your amount"
-            required #name="ngModel">
+            required #amount="ngModel">
         </div>
         <div [hidden]="!amount.pristine" class="alert alert-danger">Amount is required</div>
         <div class="form-group">
           <label for="category">Category</label>
-          <input type="text" [(ngModel)]="expense.category" 
+          <input type="text" [(ngModel)]="expense.category"
             class="form-control"
             id="category"
             name="category"
             placeholder="Enter your category"
-            required #email="ngModel">
-          <div [hidden]="!category.pristine" class="alert alert-danger">Email is required</div>
+            required #category="ngModel">
+          <div [hidden]="!category.pristine" class="alert alert-danger">Category is required</div>
         </div>
-        <button type="submit" [disabled]="!expenseForm.form.valid" 
+        <button type="submit" [disabled]="!expenseForm.form.valid"
           class="btn btn-info">Submit</button>
       </form>
     </div>

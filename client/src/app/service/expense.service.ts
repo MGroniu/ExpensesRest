@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ExpenseService {
 
   private expensesUrl:string;
-// 
+//
   constructor(private http:HttpClient) {
     this.expensesUrl = 'http://localhost:8080/expenses';
     // this.expensesUrl = 'https://restexpenses.herokuapp.com/expenses';
@@ -19,7 +19,11 @@ export class ExpenseService {
    }
 
    public save (expense:Expense){
-     return this.http.post<Expense>(this.expensesUrl, expense)
+     return this.http.post<Expense>(this.expensesUrl, expense);
+   }
+
+   public delete(id:string){
+     return this.http.delete(this.expensesUrl + '/' + id);
    }
 
 }
