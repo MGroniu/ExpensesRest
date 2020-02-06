@@ -1,5 +1,6 @@
 export class Expense {
-    id:string;
-    amount:string;
-    category:string;
+    id: string;
+    amount: string;
+    category: string;
+    localdate;
 }

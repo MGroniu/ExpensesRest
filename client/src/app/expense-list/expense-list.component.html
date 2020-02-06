@@ -6,6 +6,7 @@
             <th scope="col">#</th>
             <th scope="col">Amount</th>
             <th scope="col">Category</th>
+            <th scope="col">Date</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -14,6 +15,7 @@
             <td>{{ expense.id }}</td>
             <td>{{ expense.amount }}</td>
             <td>{{ expense.category }}</td>
+            <td>{{ expense.localdate }}</td>
             <td><button (click) = "deleteExpense(expense.id)" class="btn btn-danger">Delete</button></td>
           </tr>
         </tbody>

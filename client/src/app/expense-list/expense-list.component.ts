@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Expense} from '../model/expense';
-import{ExpenseService} from '../service/expense.service';
+import {ExpenseService} from '../service/expense.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import{ExpenseService} from '../service/expense.service';
 })
 export class ExpenseListComponent implements OnInit {
 
-  expenses:Expense[];
+  expenses: Expense[];
 
   constructor(private expenseService: ExpenseService) { }
 
@@ -21,7 +21,7 @@ export class ExpenseListComponent implements OnInit {
     });
   }
 
-  deleteExpense(id){
+  deleteExpense(id) {
     this.expenseService.delete(id).subscribe();
     window.location.reload();
 

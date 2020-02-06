@@ -1,9 +1,12 @@
 package com.restexpenses.restexpenses.models;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.WeekFields;
 import java.util.Locale;
@@ -19,13 +22,12 @@ public class Expense {
 
     private String category;
 
-//    private LocalDateTime localTime;
+    private LocalDate localDate;
 
     public Expense(int id, int amount, String category) {
         this.id = id;
         this.amount = amount;
         this.category = category;
-//        this.localTime = LocalDateTime.now();
     }
 
     public Expense() {
@@ -59,12 +61,15 @@ public class Expense {
         this.id = id;
     }
 
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
 
-//    public LocalDateTime getLocalTime() {
-//        return localTime;
-//    }
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
 
-//    public int getWeekNumber(){
+    //    public int getWeekNumber(){
 //        WeekFields weekFields = WeekFields.of(Locale.getDefault());
 //        return getLocalTime().toLocalDate().get(weekFields.weekOfWeekBasedYear());
 //    }

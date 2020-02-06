@@ -20,7 +20,7 @@ export class ExpenseFormComponent implements OnInit {
      }
 
      onSubmit(){
-       this.expenseService.save(this.expense).subscribe(result =>this.gotoExpenseList());
+       this.expenseService.save(this.expense).subscribe(result => this.gotoExpenseList());
      }
 
      gotoExpenseList(){

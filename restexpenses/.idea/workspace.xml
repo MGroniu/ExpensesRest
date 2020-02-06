@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9e485ea-ebbc-486e-91c5-5f9dee6ce198" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/src/app/service/expense.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/service/expense.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/expense-form/expense-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/expense-form/expense-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/restexpenses/restexpenses/controllers/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restexpenses/restexpenses/controllers/ExpenseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/restexpenses/restexpenses/controllers/ExpenseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restexpenses/restexpenses/controllers/ExpenseController.class" afterDir="false" />
@@ -68,7 +68,7 @@
       <updated>1580846169121</updated>
       <workItem from="1580846170234" duration="7208000" />
       <workItem from="1580919125211" duration="3355000" />
-      <workItem from="1581008488316" duration="4760000" />
+      <workItem from="1581008488316" duration="8314000" />
     </task>
     <servers />
   </component>
@@ -91,6 +91,8 @@
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
     </ignored-roots>
   </component>
 </project>
