@@ -34,4 +34,25 @@ public class ExpenseController {
         expenseService.deleteExpense(id);
     }
 
+    @GetMapping("/expenses/future")
+    public List<Expense> getFutureExpenses(){
+        return expenseService.getFutureExpenses();
+    }
+
+    @GetMapping("/expenses/today")
+    public List<Expense> getTodayExpenses(){
+        return expenseService.getTodayExpenses();
+    }
+
+    @GetMapping("/expenses/thisMonth")
+    public List<Expense> getThisMonthExpenses(){
+        return expenseService.getThisMonthExpenses();
+    }
+
+    @GetMapping("/expenses/thisYear")
+    public List<Expense> getThisYearExpenses(){
+        return expenseService.getThisYearExpenses();
+    }
+
+
 }

@@ -26,4 +26,8 @@ export class ExpenseService {
      return this.http.delete(this.expensesUrl + '/' + id);
    }
 
+   public findFuture(): Observable<Expense[]> {
+     return this.http.get<Expense[]>('http://localhost:8080/expenses/future');
+   }
+
 }

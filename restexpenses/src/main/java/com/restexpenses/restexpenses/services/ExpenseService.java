@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 @Service
 public class ExpenseService {
 
-
     private ExpenseRepo expenseRepo;
 
     @Autowired
@@ -25,7 +24,7 @@ public class ExpenseService {
     }
 
     public void saveExpense(Expense expense){
-        expense.setLocalDate(LocalDate.now());
+//        expense.setLocalDate(LocalDate.now());
         expenseRepo.save(expense);
     }
 
@@ -41,13 +40,31 @@ public class ExpenseService {
         expenseRepo.delete(getExpense(id));
     }
 
-//    public List<Expense> getAllExpenseMonthYear(LocalDateTime localDateTime){
-//        List<Expense> expenses = getAllExpenses();
-//        return expenses.stream()
-//                .filter(element -> element.getLocalTime().getMonthValue()==localDateTime.getMonthValue() &
-//                        element.getLocalTime().getYear()==localDateTime.getYear())
-//                .collect(Collectors.toList());
-//    }
+    public List<Expense> getFutureExpenses(){
+        return expenseRepo.findAllByLocalDateAfter(LocalDate.now());
+    }
+
+    public List<Expense> getTodayExpenses(){
+        return expenseRepo.findByLocalDate(LocalDate.now());
+    }
+
+    public List<Expense> getThisMonthExpenses(){
+        List<Expense> expenses = getAllExpenses();
+        return expenses.stream()
+                .filter(element -> element.getLocalDate().getMonth() == LocalDate.now().getMonth() &
+                        element.getLocalDate().getYear() == LocalDate.now().getYear())
+                .collect(Collectors.toList());
+    }
+
+    public List<Expense> getThisYearExpenses(){
+        List<Expense> expenses = getAllExpenses();
+        return expenses.stream()
+                .filter(element -> element.getLocalDate().getYear() == LocalDate.now().getYear())
+                .collect(Collectors.toList());
+    }
+
+
+}
 //
 //    public List<Expense> getAllExpenseMonthYearWeek(LocalDateTime localDateTime){
 //        List<Expense> expenses = getAllExpenses();
@@ -57,11 +74,11 @@ public class ExpenseService {
 //                        element.getLocalTime().getYear()==localDateTime.getYear() &
 //                        element.getWeekNumber() == localDateTime.toLocalDate().get(weekFields.weekOfWeekBasedYear()))
 //                .collect(Collectors.toList());
-//    }
+
 //
 //    public List<Expense> getTodaysExpenses(LocalDateTime localDateTime){
 //        return getAllExpenses().stream()
 //                .filter(element -> element.getLocalTime().toLocalDate().equals(localDateTime.toLocalDate()))
 //                .collect(Collectors.toList());
 //    }
-}
+

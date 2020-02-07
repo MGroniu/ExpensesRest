@@ -33,9 +33,7 @@ public class Expense {
     public Expense() {
     }
 
-    //    public Expense() {
-//        this.localTime = LocalDateTime.now();
-//    }
+
 
     public int getAmount() {
         return amount;
