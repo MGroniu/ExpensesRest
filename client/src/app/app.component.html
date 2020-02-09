@@ -1,4 +1,40 @@
-<div class="container">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card bg-dark my-5">
+          <div class="card-body">
+            <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+            <ul class="text-center list-inline py-3">
+              <li class="list-inline-item">
+                <a routerLink="/" class="btn btn-info">Home</a>
+              </li>
+              <li class="list-inline-item">
+                <a routerLink="/expenses" class="btn btn-info">All Expenses</a>
+              </li>
+              <li class="list-inline-item">
+                <a routerLink="/addExpense" class="btn btn-info">Add Expense</a>
+              </li>
+              <li ngbDropdown class="d-inline-block">
+                <button class="btn btn-info" id="dropdownBasic1" ngbDropdownToggle>Current Expenses</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a ngbDropdownItem  routerLink="/expenses/today" >Today</a>
+                  <a ngbDropdownItem routerLink="/expenses/thisWeek">This Week</a>
+                  <a ngbDropdownItem routerLink="/expenses/thisMonth">This Month</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-12">
       <div class="card bg-dark my-5">
@@ -14,10 +50,19 @@
             <li class="list-inline-item">
               <a routerLink="/expenses/future" class="btn btn-info">Future Expenses</a>
             </li>
+            <li class="list-inline-item">
+              <a routerLink="/expenses/today" class="btn btn-info">Today Expenses</a>
+            </li>
+            <li class="list-inline-item">
+              <a routerLink="/expenses/thisWeek" class="btn btn-info">This Week Expenses</a>
+            </li>
+            <li class="list-inline-item">
+              <a routerLink="/expenses/thisMonth" class="btn btn-info">This Month Expenses</a>
+            </li>
           </ul>
         </div>
       </div>
       <router-outlet></router-outlet>
     </div>
   </div>
-</div>
+</div> -->

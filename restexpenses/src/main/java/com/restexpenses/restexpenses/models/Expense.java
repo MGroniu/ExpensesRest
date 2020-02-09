@@ -2,6 +2,10 @@ package com.restexpenses.restexpenses.models;
 
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +26,8 @@ public class Expense {
 
     private String category;
 
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate localDate;
 
     public Expense(int id, int amount, String category) {
@@ -67,15 +73,19 @@ public class Expense {
         this.localDate = localDate;
     }
 
-    //    public int getWeekNumber(){
-//        WeekFields weekFields = WeekFields.of(Locale.getDefault());
-//        return getLocalTime().toLocalDate().get(weekFields.weekOfWeekBasedYear());
-//    }
+    public int getWeekNumber(){
+        WeekFields weekFields = WeekFields.of(Locale.getDefault());
+        try{
+            return getLocalDate().get(weekFields.weekOfWeekBasedYear());
+        } catch(Exception e){
+            return -1;
+        }
+    }
 
-//    @Override
-//    public String toString() {
-//        return "ID: " + this.getId() + " Amount: " + this.getAmount() + " Category: " + this.getCategory()
-//                + " Localtime: " + this.getLocalTime();
-//    }
+    @Override
+    public String toString() {
+        return "ID: " + this.getId() + " Amount: " + this.getAmount() + " Category: " + this.getCategory()
+                + " LocalDate: " + this.getLocalDate();
+    }
 }
 

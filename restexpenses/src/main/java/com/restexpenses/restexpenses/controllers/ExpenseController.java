@@ -26,6 +26,7 @@ public class ExpenseController {
 
     @PostMapping("/expenses")
     public void addExpense(@RequestBody Expense expense){
+        System.out.println(expense);
         expenseService.saveExpense(expense);
     }
 
@@ -44,14 +45,19 @@ public class ExpenseController {
         return expenseService.getTodayExpenses();
     }
 
-    @GetMapping("/expenses/thisMonth")
-    public List<Expense> getThisMonthExpenses(){
-        return expenseService.getThisMonthExpenses();
-    }
-
     @GetMapping("/expenses/thisYear")
     public List<Expense> getThisYearExpenses(){
         return expenseService.getThisYearExpenses();
+    }
+
+    @GetMapping("/expenses/thisWeek")
+    public List<Expense> getThisWeekExpenses(){
+        return expenseService.getThisWeekExpenses();
+    }
+
+    @GetMapping("/expenses/thisMonth")
+    public List<Expense> getThisMonth(){
+        return expenseService.getThisMonthExpenses();
     }
 
 

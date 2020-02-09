@@ -9,5 +9,5 @@ import java.util.List;
 public interface ExpenseRepo extends JpaRepository<Expense, Integer> {
 
     List<Expense> findAllByLocalDateAfter(LocalDate localDate);
-    List<Expense> findByLocalDate(LocalDate localDate);
+    List<Expense> findByLocalDateEquals(LocalDate localDate);
 }

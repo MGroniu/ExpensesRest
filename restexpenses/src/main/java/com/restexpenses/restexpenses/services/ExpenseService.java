@@ -45,7 +45,15 @@ public class ExpenseService {
     }
 
     public List<Expense> getTodayExpenses(){
-        return expenseRepo.findByLocalDate(LocalDate.now());
+        return expenseRepo.findByLocalDateEquals(LocalDate.now());
+    }
+
+    public List<Expense> getThisWeekExpenses(){
+        WeekFields weekFields = WeekFields.of(Locale.getDefault());
+        List<Expense> expenses = getAllExpenses();
+        return expenses.stream().filter(element -> element.getWeekNumber() == LocalDate.now()
+                .get(weekFields.weekOfWeekBasedYear()))
+                .collect(Collectors.toList());
     }
 
     public List<Expense> getThisMonthExpenses(){

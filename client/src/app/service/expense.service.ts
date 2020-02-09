@@ -30,4 +30,17 @@ export class ExpenseService {
      return this.http.get<Expense[]>('http://localhost:8080/expenses/future');
    }
 
+   public findToday(): Observable<Expense[]> {
+    return this.http.get<Expense[]>('http://localhost:8080/expenses/today');
+  }
+
+  public findThisWeek(): Observable<Expense[]> {
+    return this.http.get<Expense[]>('http://localhost:8080/expenses/thisWeek');
+  }
+
+  public findThisMonth(): Observable<Expense[]> {
+    return this.http.get<Expense[]>('http://localhost:8080/expenses/thisMonth');
+  }
+
+
 }

@@ -9,7 +9,10 @@ import { ExpenseFormComponent } from './expense-form/expense-form.component';
 import { ExpenseService } from './service/expense.service';
 import { FutureExpenseListComponent } from './future-expense-list/future-expense-list.component';
 // import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TodayExpenseListComponent } from './today-expense-list/today-expense-list.component';
+import { WeekExpenseListComponent } from './week-expense-list/week-expense-list.component';
+import { MonthExpenseListComponent } from './month-expense-list/month-expense-list.component';
 
 
 @NgModule({
@@ -17,13 +20,17 @@ import { FutureExpenseListComponent } from './future-expense-list/future-expense
     AppComponent,
     ExpenseListComponent,
     ExpenseFormComponent,
-    FutureExpenseListComponent
+    FutureExpenseListComponent,
+    TodayExpenseListComponent,
+    WeekExpenseListComponent,
+    MonthExpenseListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbModule
     // MatDatepickerModule
 
   ],
