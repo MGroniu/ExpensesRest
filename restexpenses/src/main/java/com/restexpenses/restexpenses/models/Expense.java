@@ -18,6 +18,8 @@ public class Expense {
 
     private int amount;
 
+    private String description;
+
     private String category;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -32,12 +34,28 @@ public class Expense {
     public Expense() {
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getAmount() {
         return amount;
     }
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCategory() {
@@ -48,18 +66,9 @@ public class Expense {
         this.category = category;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public LocalDate getLocalDate() {
         return localDate;
     }
-
 
     public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;

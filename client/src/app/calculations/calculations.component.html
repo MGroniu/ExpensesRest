@@ -1,6 +1,10 @@
 
 <h3 *ngIf = "expenses">
-  The sum: {{calculateSum()}}
-  The highest: {{calculateMax()}}
-  The lowest: {{calculateMin()}}
+  The sum of expenses: {{calculateSum('expense')}}
+  The highest of expenses: {{calculateMax('expense')}}
+  The lowest of expenses: {{calculateMin('expense')}}
+<br>
+  The sum of inflows: {{calculateSum('inflow')}}
+  The highest of inflows: {{calculateMax('inflow')}}
+  The lowest of inflows: {{calculateMin('inflow')}}
 </h3>

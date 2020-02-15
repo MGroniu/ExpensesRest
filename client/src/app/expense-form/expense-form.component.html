@@ -1,40 +1,40 @@
 <div class="card my-5">
-    <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #expenseForm="ngForm">
-        <div class="form-group">
-          <label for="amount">Amount</label>
-          <input type="text" [(ngModel)]="expense.amount"
-            class="form-control"
-            id="amount"
-            name="amount"
-            placeholder="Enter your amount"
-            required #amount="ngModel">
-        </div>
-        <div [hidden]="!amount.pristine" class="alert alert-danger">Amount is required</div>
-        <div class="form-group">
-          <label for="category">Category</label>
-          <input type="text" [(ngModel)]="expense.category"
-            class="form-control"
-            id="category"
-            name="category"
-            placeholder="Enter your category"
-            required #category="ngModel">
-          <div [hidden]="!category.pristine" class="alert alert-danger">Category is required</div>
-        </div>
-        <div class="form-group">
-          <label for="localDate">Date</label>
-          <input type="date" [(ngModel)]="expense.localDate"
-            class="form-control"
-            id="localDate"
-            name="localDate"
-            placeholder="Enter your Date"
-            required #localDate="ngModel">
-          <div [hidden]="!localDate.pristine" class="alert alert-danger">Date is required</div>
-        </div>
-        <button type="submit" [disabled]="!expenseForm.form.valid"
-          class="btn btn-info">Submit</button>
-      </form>
-    </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #expenseForm="ngForm">
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="text" [(ngModel)]="expense.amount" class="form-control" id="amount" name="amount"
+          placeholder="Enter your amount" required #amount="ngModel">
+      </div>
+      <div [hidden]="!amount.pristine" class="alert alert-danger">Amount is required</div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="expense.description" class="form-control" id="description" name="description"
+          placeholder="Enter your description" required #description="ngModel">
+        <div [hidden]="!description.pristine" class="alert alert-danger">Description is required</div>
+      </div>
+      <div class="form-group">
+        <label for="category">Choose Category: </label>
+        <select id="category"  name="category" [(ngModel)]="expense.category" class="form-control" placeholder="Enter your category"
+          required #category="ngModel">
+          <option value="inflow">Inflow</option>
+          <option value="expense">Expense</option>
+        </select>
+        <div [hidden]="!category.pristine" class="alert alert-danger">Category is required</div>
+      </div>
+      <!-- <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" [(ngModel)]="expense.category" class="form-control" id="category" name="category"
+          placeholder="Enter your category" required #category="ngModel">
+        <div [hidden]="!category.pristine" class="alert alert-danger">Category is required</div>
+      </div> -->
+      <div class="form-group">
+        <label for="localDate">Date</label>
+        <input type="date" [(ngModel)]="expense.localDate" class="form-control" id="localDate" name="localDate"
+          placeholder="Enter your Date" required #localDate="ngModel">
+        <div [hidden]="!localDate.pristine" class="alert alert-danger">Date is required</div>
+      </div>
+      <button type="submit" [disabled]="!expenseForm.form.valid" class="btn btn-info">Submit</button>
+    </form>
   </div>
-
-
+</div>
