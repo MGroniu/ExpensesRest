@@ -13,6 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodayExpenseListComponent } from './today-expense-list/today-expense-list.component';
 import { WeekExpenseListComponent } from './week-expense-list/week-expense-list.component';
 import { MonthExpenseListComponent } from './month-expense-list/month-expense-list.component';
+import { CalculationsComponent } from './calculations/calculations.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -23,14 +25,16 @@ import { MonthExpenseListComponent } from './month-expense-list/month-expense-li
     FutureExpenseListComponent,
     TodayExpenseListComponent,
     WeekExpenseListComponent,
-    MonthExpenseListComponent
+    MonthExpenseListComponent,
+    CalculationsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NoopAnimationsModule
     // MatDatepickerModule
 
   ],

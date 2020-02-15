@@ -1,17 +1,11 @@
 package com.restexpenses.restexpenses.models;
 
-
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.temporal.WeekFields;
 import java.util.Locale;
 
@@ -26,8 +20,7 @@ public class Expense {
 
     private String category;
 
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate localDate;
 
     public Expense(int id, int amount, String category) {
@@ -38,8 +31,6 @@ public class Expense {
 
     public Expense() {
     }
-
-
 
     public int getAmount() {
         return amount;
@@ -68,6 +59,7 @@ public class Expense {
     public LocalDate getLocalDate() {
         return localDate;
     }
+
 
     public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;

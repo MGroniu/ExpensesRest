@@ -1,4 +1,4 @@
-<div class="card my-5">
+<div class="card my-5" id="content" #content>
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
@@ -15,10 +15,17 @@
           <td>{{ expense.id }}</td>
           <td>{{ expense.amount }}</td>
           <td>{{ expense.category }}</td>
-          <td>{{ expense.localdate }}</td>
+          <td>{{ expense.localDate }}</td>
           <td><button (click) = "deleteExpense(expense.id)" class="btn btn-danger">Delete</button></td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+
+<!-- <div id="content" #content>
+  <h1>The title</h1>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda laboriosam voluptatem voluptas, sapiente ducimus molestiae, vero tempore alias pariatur asperiores explicabo. Dicta porro dolores velit repellendus mollitia deleniti, hic dolore?</p>
+</div> -->
+
+<button (click) = "downloadPDF()"> Export to Pdf</button>

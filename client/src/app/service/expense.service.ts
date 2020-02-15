@@ -19,6 +19,7 @@ export class ExpenseService {
    }
 
    public save(expense: Expense) {
+     console.log(expense);
      return this.http.post<Expense>(this.expensesUrl, expense);
    }
 

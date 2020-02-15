@@ -22,14 +22,14 @@
           <div [hidden]="!category.pristine" class="alert alert-danger">Category is required</div>
         </div>
         <div class="form-group">
-          <label for="localdate">Date</label>
-          <input type="date" [(ngModel)]="expense.localdate"
+          <label for="localDate">Date</label>
+          <input type="date" [(ngModel)]="expense.localDate"
             class="form-control"
-            id="localdate"
-            name="localdate"
+            id="localDate"
+            name="localDate"
             placeholder="Enter your Date"
-            required #localdate="ngModel">
-          <div [hidden]="!localdate.pristine" class="alert alert-danger">Date is required</div>
+            required #localDate="ngModel">
+          <div [hidden]="!localDate.pristine" class="alert alert-danger">Date is required</div>
         </div>
         <button type="submit" [disabled]="!expenseForm.form.valid"
           class="btn btn-info">Submit</button>
